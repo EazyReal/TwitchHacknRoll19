@@ -1,0 +1,36 @@
+<html>
+<head>
+<style type='text/css'>
+body { font-size: 9pt; }
+#btnShowBlock { text-decoration: underline; cursor: pointer; }
+<!-- .cRed { color: red; } -->
+<!-- .cGreen { color: green; } -->
+#dvHelperBlock { background-color: #f8f8f8; padding: 5px; margin-top: 10px; }
+#dvHelpBar { padding: 10px; }
+</style>
+<script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+<!-- If you use any external libraries, such as jQuery, you must include
+  them as part of your extension.  Twitch does not allow extensions to link
+  to external libraries. -->
+<script src="jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="viewer.js" type="text/javascript"></script>
+<script type='text/javascript'>
+$(function() {
+$("#btnShowBlock").click(function() {
+    $(this).toggleClass("cGreen").find("span").toggle();
+    $("#dvHelperBlock").toggle();
+});
+});
+</script>
+</head><body>
+<span id="btnShowBlock" class="cRed cGreen">
+<span>顯示</span><span style="display:none;">隱藏</span>小幫手</span>
+  <div id="dvHelperBlock" style="display: none;">
+  <fieldset><legend>試算小幫手</legend>
+  <div id="dvHelpBar">
+  功能鈕... 功能鈕... 功能鈕... 功能鈕...
+  </div></fieldset>
+</div>
+</body>
+</html>
+<!-- input type="button" name="button1" id="button1" style="display:none;" -->
